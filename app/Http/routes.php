@@ -18,3 +18,13 @@ Route::get('/', function () {
 Route::get('public', function () {
     return view('biodata');
 });
+
+Route::auth();
+Route::get('pengguna/{pengguna}', function ($pengguna) {
+    return('hallo $pengguna');
+});
+Route::get('public', function () {
+    return ('hallo');
+});
+
+Route::get('/home', 'HomeController@index');
