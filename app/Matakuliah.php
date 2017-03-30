@@ -10,4 +10,7 @@ class Matakuliah extends Model
 	protected $fillable= ['title','keterangan'];
 
     //
+    public function dosen_matakuliah(){
+    	return $this->hasMany(dosen_matakuliah::class);
+    }
 }
