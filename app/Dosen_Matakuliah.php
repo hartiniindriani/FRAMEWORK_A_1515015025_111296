@@ -8,6 +8,7 @@ class Dosen_Matakuliah extends Model
 {
   protected $table= 'dosen_matakuliah';
   protected $fillable= ['dosen_id','matakuliah_id'];
+  protected $guarded = ['id'];
     //
   public function dosen (){
   	return $this->belongsTo(Dosen::class);
@@ -17,5 +18,12 @@ class Dosen_Matakuliah extends Model
   }
   public function matakuliah(){
   	return $this->belongsTo(Matakuliah::class);
+  }
+  public function listDosendanMatakuliah(){
+    $out=[];
+    foreach ($this->all()as $dsnMtk){
+      $out[$dsnMtk->id]="{$dsnMtk->dosen->nama} (Matakuliah {$dsnMtk->matakuliah->title})";
+    }
+    return $out;
   }
 }

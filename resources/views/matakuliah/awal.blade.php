@@ -11,8 +11,8 @@
 	<thead>
 		<tr>
 			<th>No.</th>
-			<th>title</th>
-			<th>keterangan</th>
+			<th>Mama Matakuliah</th>
+			<th>Keterangan</th>
 			<th>Aksi</th>
 		</tr>
 	</thead>
